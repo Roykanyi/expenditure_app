@@ -95,7 +95,12 @@ fun HomeScreen(onNavigate: () -> Unit) {
                 .padding(32.dp),
             verticalArrangement = Arrangement.Center
         ) {
-            Text("Welcome to Expenditure App", fontSize = 28.sp, fontWeight = FontWeight.Bold, color = Color.White)
+            Text(
+                "Welcome to Expenditure App",
+                fontSize = 28.sp,
+                fontWeight = FontWeight.Bold,
+                color = Color.White
+            )
             Spacer(modifier = Modifier.height(32.dp))
             Button(onClick = onNavigate, modifier = Modifier.fillMaxWidth()) {
                 Text("Go to Spending")
@@ -121,13 +126,44 @@ fun SpendingMenu(
         )
 
         Column(modifier = Modifier.padding(16.dp)) {
-            Text("Select Spending Category", fontSize = 24.sp, fontWeight = FontWeight.Bold, color = Color.White)
+            Text(
+                "Select Spending Category",
+                fontSize = 24.sp,
+                fontWeight = FontWeight.Bold,
+                color = Color.White
+            )
             Spacer(modifier = Modifier.height(16.dp))
-            Button(onClick = onTaxi, modifier = Modifier.fillMaxWidth().padding(4.dp)) { Text("Taxi") }
-            Button(onClick = onFood, modifier = Modifier.fillMaxWidth().padding(4.dp)) { Text("Food") }
-            Button(onClick = onSchoolFees, modifier = Modifier.fillMaxWidth().padding(4.dp)) { Text("School Fees") }
-            Button(onClick = onSummary, modifier = Modifier.fillMaxWidth().padding(4.dp)) { Text("View Summary") }
-            Button(onClick = onBack, modifier = Modifier.fillMaxWidth().padding(4.dp)) { Text("Back to Home") }
+            Button(
+                onClick = onTaxi,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(4.dp)
+            ) { Text("Taxi") }
+            Button(
+                onClick = onFood,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(4.dp)
+            ) { Text("Food") }
+            Button(onClick = onSchoolFees, modifier = Modifier
+                .fillMaxWidth()
+                .padding(4.dp)) {
+                Text(
+                    "School Fees"
+                )
+            }
+            Button(
+                onClick = onSummary,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(4.dp)
+            ) { Text("View Summary") }
+            Button(
+                onClick = onBack,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(4.dp)
+            ) { Text("Back to Home") }
         }
     }
 }
@@ -176,9 +212,19 @@ fun SchoolFeesScreen(
     Column(modifier = Modifier.padding(16.dp)) {
         Text("School Fees", fontSize = 24.sp, fontWeight = FontWeight.Bold)
         Spacer(modifier = Modifier.height(8.dp))
-        TextField(value = desc, onValueChange = { desc = it }, label = { Text("Description") }, modifier = Modifier.fillMaxWidth())
+        TextField(
+            value = desc,
+            onValueChange = { desc = it },
+            label = { Text("Description") },
+            modifier = Modifier.fillMaxWidth()
+        )
         Spacer(modifier = Modifier.height(8.dp))
-        TextField(value = amount, onValueChange = { amount = it }, label = { Text("Amount") }, modifier = Modifier.fillMaxWidth())
+        TextField(
+            value = amount,
+            onValueChange = { amount = it },
+            label = { Text("Amount") },
+            modifier = Modifier.fillMaxWidth()
+        )
         Spacer(modifier = Modifier.height(8.dp))
         Button(onClick = {
             amount.toIntOrNull()?.let {
@@ -195,7 +241,9 @@ fun SchoolFeesScreen(
         Spacer(modifier = Modifier.height(16.dp))
         LazyColumn {
             items(list) {
-                Card(modifier = Modifier.fillMaxWidth().padding(8.dp)) {
+                Card(modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(8.dp)) {
                     Column(modifier = Modifier.padding(8.dp)) {
                         Text(it.first, fontWeight = FontWeight.Bold)
                         Text("Ksh ${it.second}")
