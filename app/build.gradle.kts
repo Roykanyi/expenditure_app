@@ -41,6 +41,11 @@ android {
 
 dependencies {
 
+    implementation (libs.androidx.core.core.ktx.v1120.x2)
+    implementation (libs.androidx.activity.compose.v182)
+    implementation (libs.ui)
+    implementation (libs.material3)
+    implementation (libs.androidx.lifecycle.runtime.ktx.v270)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
